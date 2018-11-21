@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CAD - UNBJG</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="alertify/css/alertify.css">
+    <link rel="stylesheet" href="alertify/css/themes/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+         <a class="navbar-brand" href="#"><i class="fas fa-chart-area fa-lg"></i></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#">Diseño Asistido por Computador</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link disabled" href="#">UNJBG</a>
+               </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+               <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fas fa-user fa-lg"></i> Franz Cruz</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <div class="container">
+      <div class="row mt-3">
+         <div class="col-sm-4">
+               <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-chart-line"></i></a>
+                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-circle"></i></a>
+                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fas fa-cut"></i></a>
+                  </div>
+               </nav>
+               <div class="card border-top-0">
+                  <div class="card-body">
+                     <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                           <h5>Lineas Arbitrarias</h5>
+                           <hr>
+                           <div class="form-group row">
+                              <label for="inputPassword" class="col-sm-4 col-form-label">P. Inicial: </label>
+                              <div class="col-sm-4">
+                                 <input type="password" class="form-control" id="inputPassword" placeholder="X1">
+                              </div>
+                              <div class="col-sm-4">
+                                 <input type="password" class="form-control" id="inputPassword" placeholder="Y1">
+                              </div>
+                           </div>
+                           <div class="form-group row">
+                              <label for="inputPassword" class="col-sm-4 col-form-label">P. Final: </label>
+                              <div class="col-sm-4">
+                                 <input type="password" class="form-control" id="inputPassword" placeholder="X2">
+                              </div>
+                              <div class="col-sm-4">
+                                 <input type="password" class="form-control" id="inputPassword" placeholder="Y2">
+                              </div>
+                           </div>
+                           <div class="form-group row">
+                              <label for="inputEmail3" class="col-sm-4 col-form-label">Método</label>
+                              <div class="col-sm-8">
+                                 <select id="inputState" class="form-control">
+                                    <option selected>Elije una...</option>
+                                    <option>M. Directo</option>
+                                    <option>ADD Simple</option>
+                                    <option>ADD Entero</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <hr>
+                           <div class="row">
+                              <div class="col-sm-12">
+                                 <button class="btn btn-primary">Dibujar</button>
+                                 <button class="btn btn-danger">Limpiar</button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                           <h5>Circulos</h5>
+                           <hr>
+                           <form action="">
+                              <div class="form-group row">
+                                 <label for="inputPassword" class="col-sm-4 col-form-label">P. Central: </label>
+                                 <div class="col-sm-4">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Xc">
+                                 </div>
+                                 <div class="col-sm-4">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Yc">
+                                 </div>
+                              </div>
+                              <div class="form-group row">
+                                 <label for="inputPassword" class="col-sm-4 col-form-label">Radio: </label>
+                                 <div class="col-sm-4">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="r">
+                                 </div>
+                              </div>
+                              <div class="form-group row">
+                                 <label for="inputEmail3" class="col-sm-4 col-form-label">Método</label>
+                                 <div class="col-sm-8">
+                                    <select id="inputState" class="form-control">
+                                       <option selected>Elije una...</option>
+                                       <option>Rep. Implícita</option>
+                                       <option>Rep. Paramétrica Polar</option>
+                                       <option>Trazado Incremental</option>
+                                       <option value="">Unión de Segmentos</option>
+                                       <option value="">BRESENHAM</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </form>
+                           <hr>
+                           <div class="row">
+                              <div class="col-sm-12">
+                                 <button class="btn btn-primary">Dibujar</button>
+                                 <button class="btn btn-danger">Limpiar</button>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="alert alert-primary mt-3" role="alert">
+                  Método: Usado el ...
+               </div>
+         </div>
+         <div class="col-sm-8">
+            <div class="pizarra">
+               <canvas id="canvas"></canvas>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="js/jquery.3.2.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="alertify/alertify.js"></script>
+</body>
+</html>
