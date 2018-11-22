@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="alertify/css/themes/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="cuadrantes()">
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
          <a class="navbar-brand" href="#"><i class="fas fa-chart-area fa-lg"></i></a>
@@ -139,15 +139,37 @@
                   Método: Usado el ...
                </div>
          </div>
-         <div class="col-sm-8">
-            <div class="pizarra">
-               <canvas id="canvas"></canvas>
+         <div class="col-sm-8 d-flex">
+            <div class="pizarra m-auto">
+               <canvas id="canvas" style="padding:0; border: 1px solid #343a40; " width="550" height="500"></canvas>
             </div>
          </div>
       </div>
    </div>
+
    <script src="js/jquery.3.2.1.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script src="alertify/alertify.js"></script>
+   <script>
+      function cuadrantes()
+         {
+            ej1=document.getElementById("canvas"); 
+            lienzo1=ej1.getContext("2d");
+            lienzo1.lineWidth=1;
+            lienzo1.strokeStyle = 'black'; 
+            //EJE y
+            lienzo1.beginPath(); 
+            lienzo1.moveTo(275,0); 
+            lienzo1.lineTo(275,500);
+            lienzo1.stroke(); 
+            lienzo1.closePath(); 
+            //EJE x
+            lienzo1.beginPath(); 
+            lienzo1.moveTo(0,250);
+            lienzo1.lineTo(550,250);
+            lienzo1.stroke();
+            lienzo1.closePath();
+         }
+</script>
 </body>
 </html>
