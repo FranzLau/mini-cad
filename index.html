@@ -54,39 +54,39 @@
                            <h5>Lineas Arbitrarias</h5>
                            <hr>
                            <div class="form-group row">
-                              <label for="inputPassword" class="col-sm-4 col-form-label">P. Inicial: </label>
+                              <label for="numx1" class="col-sm-4 col-form-label">P. Inicial: </label>
                               <div class="col-sm-4">
-                                 <input type="password" class="form-control" id="inputPassword" placeholder="X1">
+                                 <input type="text" class="form-control" id="numx1" placeholder="X1">
                               </div>
                               <div class="col-sm-4">
-                                 <input type="password" class="form-control" id="inputPassword" placeholder="Y1">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="inputPassword" class="col-sm-4 col-form-label">P. Final: </label>
-                              <div class="col-sm-4">
-                                 <input type="password" class="form-control" id="inputPassword" placeholder="X2">
-                              </div>
-                              <div class="col-sm-4">
-                                 <input type="password" class="form-control" id="inputPassword" placeholder="Y2">
+                                 <input type="text" class="form-control" id="numy1" placeholder="Y1">
                               </div>
                            </div>
                            <div class="form-group row">
-                              <label for="inputEmail3" class="col-sm-4 col-form-label">Método</label>
+                              <label for="numx2" class="col-sm-4 col-form-label">P. Final: </label>
+                              <div class="col-sm-4">
+                                 <input type="text" class="form-control" id="numx2" placeholder="X2">
+                              </div>
+                              <div class="col-sm-4">
+                                 <input type="text" class="form-control" id="numy2" placeholder="Y2">
+                              </div>
+                           </div>
+                           <div class="form-group row">
+                              <label for="metodoLinea" class="col-sm-4 col-form-label">Método</label>
                               <div class="col-sm-8">
-                                 <select id="inputState" class="form-control">
-                                    <option selected>Elije una...</option>
-                                    <option>M. Directo</option>
-                                    <option>ADD Simple</option>
-                                    <option>ADD Entero</option>
+                                 <select id="metodoLinea" class="form-control">
+                                    <option selected value="0">Elije una...</option>
+                                    <option value="MD">M. Directo</option>
+                                    <option value="ADDS">ADD Simple</option>
+                                    <option value="ADDE">ADD Entero</option>
                                  </select>
                               </div>
                            </div>
                            <hr>
                            <div class="row">
                               <div class="col-sm-12">
-                                 <button class="btn btn-primary">Dibujar</button>
-                                 <button class="btn btn-danger">Limpiar</button>
+                                 <button class="btn btn-primary" id="btn-arbitraria">Dibujar</button>
+                                 <button class="btn btn-danger" id="btn-limpiar">Limpiar</button>
                               </div>
                            </div>
                         </div>
@@ -131,7 +131,9 @@
                               </div>
                            </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                           <p>Algoritmo de recorte</p>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -148,8 +150,10 @@
    </div>
 
    <script src="js/jquery.3.2.1.min.js"></script>
+   <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script src="alertify/alertify.js"></script>
+   <script src="js/funciones.js"></script>
    <script>
       function cuadrantes()
          {
@@ -170,6 +174,6 @@
             lienzo1.stroke();
             lienzo1.closePath();
          }
-</script>
+   </script>
 </body>
 </html>
