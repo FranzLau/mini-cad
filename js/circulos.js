@@ -80,7 +80,24 @@ $('#btn-circulo').click(function(){
 		alertify.success('Trazado Incremental');
 	}else if (metodoc=='SEG') {
 		alertify.error('Union de Segmentos');
-	}else if (metodoc=='BRES') {
+	}else if (metodoc=='BRES') { // ------------------------ Algortimo de BRESENHAN -------------------
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "blue";
+		r = Number(nrc);
+		xc = Number(nxc);
+		yc = Number(nyc);
+		var y=r;
+		for (x=0;x<=r;x++){
+			var dA = Math.pow(x+1,2) + Math.pow(y,2) - Math.pow(r,2);
+			var dB = Math.pow(x+1,2) + Math.pow(y-1,2) - Math.pow(r,2);
+			var S = dA + dB;
+			if (S<0) {
+				
+			}else {
+
+			}
+		}
 		alertify.error('Metodo Bresenham');
 	}
 })
