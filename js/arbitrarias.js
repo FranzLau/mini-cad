@@ -154,7 +154,148 @@ $('#btn-arbitraria').click(function(){
         alertify.success('ADD Simple');
     }else if (metodo == 'ADDE'){ // -----------------------------METODO ADD ENTERO ---------------------------
         // ADD Entero
+        x1 = Number(nx1);
+        y1 = Number(ny1);
+        x2 = Number(nx2);
+        y2 = Number(ny2);
+        var canvas = document.getElementById("canvas");
+        if (x1>=-275 && x1<=275 && y1>=-250 && y1<=250 && x2>=-275 && x2<=275 && y2>=-250 && y2<=250) {
+            var del_x = x2 - x1;
+            var del_y = y2 - y1;
+            i = 0;
+            // Para cambiar extremos
+            if (del_y < 0) {
+                //cambiar puntos o extremos
+                var x1c=x2;
+                var y1c=y2;
+                var x2c=x1;
+                var y2c=y1;
+                // Dibujo el primer punto
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(x1c,y1c,1,1);
+                add_entero(x1c,y1c,x2c,y2c);
+            }else {
+                //Dibujar el primer Punto
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(x1,y1,1,1);
+                add_entero(x1,y1,x2,y2);
+
+            }
+        }else {
+            window.alert("Revise los valores ingresados, alguno no es válido.");
+            document.getElementById("numx1").value = "";
+            document.getElementById("numy1").value = "";
+            document.getElementById("numx2").value = "";
+            document.getElementById("numy2").value = "";
+        }
         alertify.success('ADD Entero');
     }
 
 })
+function add_entero(px1,py1,px2,py2){
+    x1 = Number(px1);
+    y1 = Number(py1);
+    x2 = Number(px2);
+    y2 = Number(py2);
+    var canvas = document.getElementById("canvas");
+    var delt_y = y2 - y1;
+    var delt_x = x2 - x1;
+    error = 0;
+    i = 0 ;
+    
+    while (x1+i<=x2){
+        if (delt_x >= 0) {
+            // CASO 1 y 2
+            if (delt_x>=delt_y) {
+                // CASO 1
+                if (error < 0) {
+                    var x = x1+1;
+            		var y = y1;
+            		error = error + delt_y;
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }else {
+                    var y = y1 + 1;
+            		var x = x1 + 1;
+            		error = error + (delt_y - delt_x);
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }
+            }else {
+                // CASO 2
+                if (error < 0) {
+                    var y = y1+1;
+            		var x = x1+1;
+            		error = error + (delt_y - delt_x);
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }else {
+                    var y = y1 + 1;
+            		var x = x1;
+            		error = error - delt_x;
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }
+            }
+        }else {
+            // CASO 3 y 4
+            if (delt_x >= delt_y) {
+                // CASO 3
+                if (error<0) {
+                    var x = x1-1;
+            		var y = y1;
+            		error = error + delt_y;
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }else {
+                    var y = y1 + 1;
+            		var x = x1 - 1;
+            		error = error + (delt_x + delt_y);
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }
+            }else {
+                // CASO 4
+                if (error<0) {
+                    var x = x1-1;
+            		var y = y1+1;
+            		error = error + (delt_x + delt_y);
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }else {
+                    var y = y1 + 1;
+            		var x = x1;
+            		error = error + delt_x ;
+                    var ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "blue";
+                    x1 = x;
+                    y1 = y;
+                    ctx.fillRect(x+275,y+250,1,1);
+                }
+            }
+        }
+    }
+}
