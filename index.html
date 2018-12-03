@@ -91,34 +91,34 @@
                            </div>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                           <h5>Circulos</h5>
+                           <h5>Círculos</h5>
                            <hr>
                            <form action="">
                               <div class="form-group row">
-                                 <label for="inputPassword" class="col-sm-4 col-form-label">P. Central: </label>
+                                 <label for="xcentro" class="col-sm-4 col-form-label">P. Central: </label>
                                  <div class="col-sm-4">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Xc">
+                                    <input type="number" class="form-control" id="xcentro" placeholder="Xc">
                                  </div>
                                  <div class="col-sm-4">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Yc">
-                                 </div>
-                              </div>
-                              <div class="form-group row">
-                                 <label for="inputPassword" class="col-sm-4 col-form-label">Radio: </label>
-                                 <div class="col-sm-4">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="r">
+                                    <input type="number" class="form-control" id="ycentro" placeholder="Yc">
                                  </div>
                               </div>
                               <div class="form-group row">
-                                 <label for="inputEmail3" class="col-sm-4 col-form-label">Método</label>
+                                 <label for="radio" class="col-sm-4 col-form-label">Radio: </label>
+                                 <div class="col-sm-4">
+                                    <input type="number" class="form-control" id="radio" placeholder="R">
+                                 </div>
+                              </div>
+                              <div class="form-group row">
+                                 <label for="met-circulo" class="col-sm-4 col-form-label">Método</label>
                                  <div class="col-sm-8">
-                                    <select id="inputState" class="form-control">
-                                       <option selected>Elije una...</option>
-                                       <option>Rep. Implícita</option>
-                                       <option>Rep. Paramétrica Polar</option>
-                                       <option>Trazado Incremental</option>
-                                       <option value="">Unión de Segmentos</option>
-                                       <option value="">BRESENHAM</option>
+                                    <select id="met-circulo" class="form-control">
+                                       <option selected value="0">Elije una...</option>
+                                       <option value="IMP">Rep. Implícita</option>
+                                       <option value="POLAR">Rep. Paramétrica Polar</option>
+                                       <option value="INC">Trazado Incremental</option>
+                                       <option value="SEG">Unión de Segmentos</option>
+                                       <option value="BRES">BRESENHAM</option>
                                     </select>
                                  </div>
                               </div>
@@ -126,7 +126,7 @@
                            <hr>
                            <div class="row">
                               <div class="col-sm-12">
-                                 <button class="btn btn-primary">Dibujar</button>
+                                 <button class="btn btn-info" id="btn-circulo">Dibujar</button>
                                  <button class="btn btn-danger">Limpiar</button>
                               </div>
                            </div>
@@ -154,6 +154,7 @@
    <script src="js/bootstrap.min.js"></script>
    <script src="alertify/alertify.js"></script>
    <script src="js/arbitrarias.js"></script>
+   <script src="js/circulos.js"></script>
    <script>
       function cuadrantes()
          {
