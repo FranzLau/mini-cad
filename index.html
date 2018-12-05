@@ -13,14 +13,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="cuadrantes()">
-   <!--
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-         <a class="navbar-brand" href="#"><i class="fas fa-chart-area fa-lg"></i></a>
+   
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="#"><i class="fab fa-autoprefixer"></i></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
-         
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item active">
@@ -32,94 +31,119 @@
             </ul>
             <ul class="navbar-nav navbar-right">
                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fas fa-user fa-lg"></i> Franz Cruz</a>
+                  <a class="nav-link" href="#"><i class="fas fa-user"></i> Franz Cruz</a>
                </li>
             </ul>
          </div>
       </div>
-   </nav>-->
-   <section id="section-bar" class="bg-bar">
-      <div class="container">
+   </nav>
+  
+   <section>
+      <div class="container-fluid">
          <div class="row">
-            
-            <div class="col-sm-12">
-               <nav class="bg-bar">
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-chart-line"></i> Arbitrarias</a>
-                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-circle"></i> Círculos</a>
-                     <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fas fa-cut"></i> Recortes</a>
+            <div class="col-sm-4 bg-date"> <!-------  BARRA DE HERRAMIENTAS --------------->
+               <div class="row">
+                  <div class="col-3"> <!---------------  BOTONES ---------------->
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-arrows-alt-h"></i></a>
+                      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-chart-line"></i></a>
+                      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="far fa-circle"></i></a>
+                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-cut"></i></a>
+                    </div>
                   </div>
-               </nav>
-               <div class="card border-top-0 bg-bar">
-                  <div class="card-body">
-                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                           <form action="">
-                              <div class="row">
-                                 <div class="col-sm-4">
-                                    <div class="form-group row">
-                                       <label for="numx1" class=" col-sm-2 col-form-label col-form-label-sm">P1</label>
-                                       <div class="col-sm-5">
-                                          <input type="number" class="form-control form-control-sm" id="numx1" placeholder="X1">
-                                       </div>
-                                       <div class="col-sm-5">
-                                          <input type="number" class="form-control form-control-sm" id="numy1" placeholder="Y1">
-                                       </div>
+                  <div class="col-9"> <!--------------- CAJAS DE TEXTO ---------------->
+                    <div class="card border-0">
+                        <div class="card-body">
+                           <div class="tab-content" id="v-pills-tabContent">
+                              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                 <h3>Lineas rectas</h3>
+                                 <hr>
+                                 <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                       <label for="lx1" class="col-form-label col-form-label-sm">Punto Inicial</label>
+                                       <input type="number" class="form-control form-control-sm" id="lx1" placeholder="X1">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="ly1" class="col-form-label col-form-label-sm"></label>
+                                       <input type="number" class="form-control form-control-sm" id="ly1" placeholder="Y1">
                                     </div>
                                  </div>
-                                 <div class="col-sm-4">
-                                    <div class="form-group row">
-                                       <label for="numx2" class=" col-sm-2 col-form-label col-form-label-sm">P2</label>
-                                       <div class="col-sm-5">
-                                          <input type="number" class="form-control form-control-sm" id="numx2" placeholder="X2">
-                                       </div>
-                                       <div class="col-sm-5">
-                                          <input type="number" class="form-control form-control-sm" id="numy2" placeholder="Y2">
-                                       </div>
+                                 <div class="form-row">
+                                    <div class=" form-group col-sm-6">
+                                       <label for="lx2" class="col-form-label col-form-label-sm">Punto Final</label>
+                                       <input type="number" class="form-control form-control-sm" id="lx2" placeholder="X2">
+                                    </div>
+                                    <div class=" form-group col-sm-6">
+                                       <label for="ly2" class="col-form-label col-form-label-sm"></label>
+                                       <input type="number" class="form-control form-control-sm" id="ly2" placeholder="Y2">
                                     </div>
                                  </div>
-                                 <div class="col-sm-3">
-                                    <div class="form-group row">
-                                       <label for="metodoLinea" class="col-sm-3 col-form-label col-form-label-sm">M</label>
-                                       <div class="col-sm-9">
-                                          <select id="metodoLinea" class="form-control form-control-sm">
-                                             <option selected value="0">Elije una...</option>
-                                             <option value="MD">M. Directo</option>
-                                             <option value="ADDS">ADD Simple</option>
-                                             <option value="ADDE">ADD Entero</option>
-                                          </select>
-                                       </div>
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <button class="btn btn-success btn-sm">Dibujar</button>
                                     </div>
                                  </div>
-                                 <div class="col-sm-1">
-                                    <button class="btn btn-primary btn-sm" id="btn-arbitraria">Dibujar</button>
+                              </div>
+                              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                 <h3>Lineas Arbitrarias</h3>
+                                 <hr>
+                                 <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                       <label for="numx1" class="col-form-label col-form-label-sm">Punto Inicial</label>
+                                       <input type="number" class="form-control form-control-sm" id="numx1" placeholder="X1">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="numy1" class="col-form-label col-form-label-sm"></label>
+                                       <input type="number" class="form-control form-control-sm" id="numy1" placeholder="Y1">
+                                    </div>
+                                 </div>
+                                 <div class="form-row">
+                                    <div class=" form-group col-sm-6">
+                                       <label for="numx2" class="col-form-label col-form-label-sm">Punto Final</label>
+                                       <input type="number" class="form-control form-control-sm" id="numx2" placeholder="X2">
+                                    </div>
+                                    <div class=" form-group col-sm-6">
+                                       <label for="numy2" class="col-form-label col-form-label-sm"></label>
+                                       <input type="number" class="form-control form-control-sm" id="numy2" placeholder="Y2">
+                                    </div>
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="metodoLinea" class="col-form-label col-form-label-sm">Metodo:</label>
+                                    <select id="metodoLinea" class="form-control form-control-sm">
+                                       <option selected value="0">Elije una...</option>
+                                       <option value="MD">M. Directo</option>
+                                       <option value="ADDS">ADD Simple</option>
+                                       <option value="ADDE">ADD Entero</option>
+                                    </select>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <button class="btn btn-primary btn-sm" id="btn-arbitraria">Dibujar</button>
+                                    </div>
                                  </div>
                               </div>
-                           </form>
-                        </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                           <h5>Círculos</h5>
-                           <hr>
-                           <form action="">
-                              <div class="form-group row">
-                                 <label for="xcentro" class="col-sm-4 col-form-label">P. Central: </label>
-                                 <div class="col-sm-4">
-                                    <input type="number" class="form-control" id="xcentro" placeholder="Xc">
+                              
+                              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                 <h3>Círculos</h3>
+                                 <hr>
+                                 <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                       <label for="xcentro" class="col-form-label col-form-label-sm">Punto Central: </label>
+                                       <input type="number" class="form-control form-control-sm" id="xcentro" placeholder="Xc">
+                                       
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                       <label for="ycentro" class="col-form-label col-form-label-sm"></label>
+                                       <input type="number" class="form-control form-control-sm" id="ycentro" placeholder="Yc">
+                                    </div>
                                  </div>
-                                 <div class="col-sm-4">
-                                    <input type="number" class="form-control" id="ycentro" placeholder="Yc">
+                                 <div class="form-group">
+                                    <label for="radio" class="col-form-label col-form-label-sm">Radio: </label>
+                                    <input type="number" class="form-control form-control-sm" id="radio" placeholder="R">
                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                 <label for="radio" class="col-sm-4 col-form-label">Radio: </label>
-                                 <div class="col-sm-4">
-                                    <input type="number" class="form-control" id="radio" placeholder="R">
-                                 </div>
-                              </div>
-                              <div class="form-group row">
-                                 <label for="met-circulo" class="col-sm-4 col-form-label">Método</label>
-                                 <div class="col-sm-8">
-                                    <select id="met-circulo" class="form-control">
+                                 <div class="form-group">
+                                    <label for="met-circulo" class="col-form-label col-form-label-sm">Método</label>
+                                    <select id="met-circulo" class="form-control form-control-sm">
                                        <option selected value="0">Elije una...</option>
                                        <option value="IMP">Rep. Implícita</option>
                                        <option value="POLAR">Rep. Paramétrica Polar</option>
@@ -128,35 +152,27 @@
                                        <option value="BRES">BRESENHAM</option>
                                     </select>
                                  </div>
+                                 <div class="row">
+                                    <div class="col-sm-12">
+                                       <button class="btn btn-info btn-sm" id="btn-circulo">Dibujar</button>
+                                    </div>
+                                 </div>
                               </div>
-                           </form>
-                           <hr>
-                           <div class="row">
-                              <div class="col-sm-12">
-                                 <button class="btn btn-info" id="btn-circulo">Dibujar</button>
-                                 <button class="btn btn-danger">Limpiar</button>
-                              </div>
+                              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                            </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                           <p>Algoritmo de recorte</p>
-                        </div>
-                     </div>
+                    </div>
                   </div>
+               </div>
+            </div>
+            <div class="col-sm-8 p-0"> <!--------------- PIZARRA ----------------------------->
+               <div class="pizarra">
+                  <canvas id="canvas" style="padding:0; border: 1px solid #455a64; " width="550" height="500"></canvas>
                </div>
             </div>
          </div>
       </div>
    </section>
-   <div class="container">
-      <div class="row mt-2">
-         <div class="col-sm-12 d-flex">
-            <div class="pizarra m-auto">
-               <canvas id="canvas" style="padding:0; border: 1px solid #343a40; " width="550" height="500"></canvas>
-            </div>
-         </div>
-      </div>
-   </div>
 
    <script src="js/jquery.3.2.1.min.js"></script>
    <script src="js/popper.min.js"></script>
@@ -170,7 +186,7 @@
             ej1=document.getElementById("canvas"); 
             lienzo1=ej1.getContext("2d");
             lienzo1.lineWidth=1;
-            lienzo1.strokeStyle = 'black'; 
+            lienzo1.strokeStyle = '#455a64'; 
             //EJE x
             lienzo1.beginPath(); 
             lienzo1.moveTo(275,0); 

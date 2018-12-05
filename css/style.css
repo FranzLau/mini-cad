@@ -1,8 +1,22 @@
+.bg-pizarra {
+	background-color: #2d313c;
+}
 #canvas {
-	background: #FFFFFF;
+	background: #2d313c;
 	transform: scaleY(-1);
 }
-.bg-bar {
-	background: #343a40;
-	color: #FFFFFF;
+#section-bar {
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.bg-date {
+	background-color: #eeeeee;
+}
+
+.nav-link.active {
+	color: black!important;
+	background-color: #ffffff!important;
+}
+.nav a {
+	color: black!important;
 }
