@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body onload="cuadrantes()">
+   <!--
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
          <a class="navbar-brand" href="#"><i class="fas fa-chart-area fa-lg"></i></a>
@@ -36,59 +37,65 @@
             </ul>
          </div>
       </div>
-   </nav>
-   <div class="container">
-      <div class="row mt-5">
-         <div class="col-sm-5">
-               <nav>
+   </nav>-->
+   <section id="section-bar" class="bg-bar">
+      <div class="container">
+         <div class="row">
+            
+            <div class="col-sm-12">
+               <nav class="bg-bar">
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-chart-line"></i> Arbitrarias</a>
                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="far fa-circle"></i> Círculos</a>
                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fas fa-cut"></i> Recortes</a>
                   </div>
                </nav>
-               <div class="card border-top-0">
+               <div class="card border-top-0 bg-bar">
                   <div class="card-body">
                      <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                           <h5>Lineas Arbitrarias</h5>
-                           <hr>
-                           <div class="form-group row">
-                              <label for="numx1" class="col-sm-4 col-form-label">P. Inicial: </label>
-                              <div class="col-sm-4">
-                                 <input type="number" class="form-control" id="numx1" placeholder="X1">
+                           <form action="">
+                              <div class="row">
+                                 <div class="col-sm-4">
+                                    <div class="form-group row">
+                                       <label for="numx1" class=" col-sm-2 col-form-label col-form-label-sm">P1</label>
+                                       <div class="col-sm-5">
+                                          <input type="number" class="form-control form-control-sm" id="numx1" placeholder="X1">
+                                       </div>
+                                       <div class="col-sm-5">
+                                          <input type="number" class="form-control form-control-sm" id="numy1" placeholder="Y1">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-4">
+                                    <div class="form-group row">
+                                       <label for="numx2" class=" col-sm-2 col-form-label col-form-label-sm">P2</label>
+                                       <div class="col-sm-5">
+                                          <input type="number" class="form-control form-control-sm" id="numx2" placeholder="X2">
+                                       </div>
+                                       <div class="col-sm-5">
+                                          <input type="number" class="form-control form-control-sm" id="numy2" placeholder="Y2">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-3">
+                                    <div class="form-group row">
+                                       <label for="metodoLinea" class="col-sm-3 col-form-label col-form-label-sm">M</label>
+                                       <div class="col-sm-9">
+                                          <select id="metodoLinea" class="form-control form-control-sm">
+                                             <option selected value="0">Elije una...</option>
+                                             <option value="MD">M. Directo</option>
+                                             <option value="ADDS">ADD Simple</option>
+                                             <option value="ADDE">ADD Entero</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-1">
+                                    <button class="btn btn-primary btn-sm" id="btn-arbitraria">Dibujar</button>
+                                 </div>
                               </div>
-                              <div class="col-sm-4">
-                                 <input type="number" class="form-control" id="numy1" placeholder="Y1">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="numx2" class="col-sm-4 col-form-label">P. Final: </label>
-                              <div class="col-sm-4">
-                                 <input type="number" class="form-control" id="numx2" placeholder="X2">
-                              </div>
-                              <div class="col-sm-4">
-                                 <input type="number" class="form-control" id="numy2" placeholder="Y2">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="metodoLinea" class="col-sm-4 col-form-label">Método</label>
-                              <div class="col-sm-8">
-                                 <select id="metodoLinea" class="form-control">
-                                    <option selected value="0">Elije una...</option>
-                                    <option value="MD">M. Directo</option>
-                                    <option value="ADDS">ADD Simple</option>
-                                    <option value="ADDE">ADD Entero</option>
-                                 </select>
-                              </div>
-                           </div>
-                           <hr>
-                           <div class="row">
-                              <div class="col-sm-12">
-                                 <button class="btn btn-primary" id="btn-arbitraria">Dibujar</button>
-                                 <button class="btn btn-danger" id="btn-limpiar">Limpiar</button>
-                              </div>
-                           </div>
+                           </form>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                            <h5>Círculos</h5>
@@ -137,11 +144,13 @@
                      </div>
                   </div>
                </div>
-               <div class="alert alert-primary mt-3" role="alert">
-                  Método: Usado el ...
-               </div>
+            </div>
          </div>
-         <div class="col-sm-7 d-flex">
+      </div>
+   </section>
+   <div class="container">
+      <div class="row mt-2">
+         <div class="col-sm-12 d-flex">
             <div class="pizarra m-auto">
                <canvas id="canvas" style="padding:0; border: 1px solid #343a40; " width="550" height="500"></canvas>
             </div>
@@ -162,13 +171,13 @@
             lienzo1=ej1.getContext("2d");
             lienzo1.lineWidth=1;
             lienzo1.strokeStyle = 'black'; 
-            //EJE y
+            //EJE x
             lienzo1.beginPath(); 
             lienzo1.moveTo(275,0); 
             lienzo1.lineTo(275,500);
             lienzo1.stroke(); 
             lienzo1.closePath(); 
-            //EJE x
+            //EJE y
             lienzo1.beginPath(); 
             lienzo1.moveTo(0,250);
             lienzo1.lineTo(550,250);

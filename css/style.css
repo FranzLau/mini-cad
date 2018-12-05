@@ -2,3 +2,7 @@
 	background: #FFFFFF;
 	transform: scaleY(-1);
 }
+.bg-bar {
+	background: #343a40;
+	color: #FFFFFF;
+}

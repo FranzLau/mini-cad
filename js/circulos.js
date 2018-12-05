@@ -95,7 +95,7 @@ $('#btn-circulo').click(function(){
 			if (S<0) {
 				
 			}else {
-
+				
 			}
 		}
 		alertify.error('Metodo Bresenham');
