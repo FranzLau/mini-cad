@@ -5,21 +5,3 @@
 	background: #2d313c;
 	transform: scaleY(-1);
 }
-#section-bar {
-	width: 100%;
-	background-color: #FFFFFF;
-}
-.bg-date {
-	background-color: #eeeeee;
-}
-.nav-link.active {
-	color: black!important;
-	background-color: #ffffff!important;
-}
-.nav a {
-	color: black!important;
-	margin: auto;
-	width: 100%;
-	text-align: center;
-	height: 80px;
-}

@@ -14,24 +14,22 @@
 </head>
 <body onload="cuadrantes()">
    
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-         <a class="navbar-brand" href="#"><i class="fab fa-autoprefixer"></i></a>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+         <a class="navbar-brand" href="index.html"><i class="fas fa-desktop"></i> Diseño Asistido por Computador</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav navbar-right ml-auto">
                <li class="nav-item active">
-                  <a class="nav-link" href="#">Diseño Asistido por Computador</a>
+                  <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link disabled" href="#">UNJBG</a>
+                  <a class="nav-link" href="cut.html"><i class="fas fa-cut"></i> Recortes</a>
                </li>
-            </ul>
-            <ul class="navbar-nav navbar-right">
                <li class="nav-item">
-                  <a class="nav-link" href="#"><i class="fas fa-user"></i> Franz Cruz</a>
+                  <a class="nav-link" href="transforma.html"><i class="fas fa-arrows-alt"></i> Transformaciones</a>
                </li>
             </ul>
          </div>
@@ -39,19 +37,19 @@
    </nav>
   
    <section>
-      <div class="container-fluid">
-         <div class="row">
-            <div class="col-sm-4 bg-date"> <!-------  BARRA DE HERRAMIENTAS --------------->
+      <div class="container">
+         <div class="row mt-4">
+            <div class="col-sm-4"> <!-------  BARRA DE HERRAMIENTAS --------------->
                <div class="row">
-                  <div class="col-2 p-0"> <!---------------  BOTONES ---------------->
+                  <div class="col-3 text-center"> <!---------------  BOTONES ---------------->
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-arrows-alt-h"></i></a>
                       <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-chart-line"></i></a>
                       <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="far fa-circle"></i></a>
-                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-cut"></i></a>
+                      <!--<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-cut"></i></a>-->
                     </div>
                   </div>
-                  <div class="col-10 p-0"> <!--------------- CAJAS DE TEXTO ---------------->
+                  <div class="col-9"> <!--------------- CAJAS DE TEXTO ---------------->
                     <div class="card border-0">
                         <div class="card-body">
                            <div class="tab-content" id="v-pills-tabContent">
@@ -80,12 +78,12 @@
                                  </div>
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <button class="btn btn-success btn-sm">Dibujar</button>
+                                       <button class="btn btn-success" id="btn-recta">Dibujar</button>
                                     </div>
                                  </div>
                               </div>
                               <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                 <h3>Lineas Arbitrarias</h3>
+                                 <h4>Lineas Arbitrarias</h4>
                                  <hr>
                                  <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -118,7 +116,7 @@
                                  </div>
                                  <div class="row">
                                     <div class="col-md-12">
-                                       <button class="btn btn-primary btn-sm" id="btn-arbitraria">Dibujar</button>
+                                       <button class="btn btn-success" id="btn-arbitraria">Dibujar</button>
                                     </div>
                                  </div>
                               </div>
@@ -148,24 +146,25 @@
                                        <option value="IMP">Rep. Implícita</option>
                                        <option value="POLAR">Rep. Paramétrica Polar</option>
                                        <option value="INC">Trazado Incremental</option>
-                                       <option value="SEG">Unión de Segmentos</option>
+                                       <!--<option value="SEG">Unión de Segmentos</option>-->
                                        <option value="BRES">BRESENHAM</option>
                                     </select>
                                  </div>
                                  <div class="row">
                                     <div class="col-sm-12">
-                                       <button class="btn btn-info btn-sm" id="btn-circulo">Dibujar</button>
+                                       <button class="btn btn-success" id="btn-circulo">Dibujar</button>
                                     </div>
                                  </div>
                               </div>
-                              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                              <!--<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>-->
+                              
                            </div>
                         </div>
                     </div>
                   </div>
                </div>
             </div>
-            <div class="col-sm-8 p-0"> <!--------------- PIZARRA ----------------------------->
+            <div class="col-sm-8"> <!--------------- PIZARRA ----------------------------->
                <div class="pizarra">
                   <canvas id="canvas" style="padding:0; border: 1px solid #455a64; " width="550" height="500"></canvas>
                </div>
@@ -178,6 +177,7 @@
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script src="alertify/alertify.js"></script>
+   <script src="js/rectas.js"></script>
    <script src="js/arbitrarias.js"></script>
    <script src="js/circulos.js"></script>
    <script>

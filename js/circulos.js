@@ -87,7 +87,7 @@ $('#btn-circulo').click(function(){
 		r = Number(nrc);
 		xc = Number(nxc);
 		yc = Number(nyc);
-		y=yc+r;
+		var y=yc+r;
 		//pintar primer punto
 		for (x=xc;x<=xc+r;x++){
 			var dA = Math.pow(x+1,2) + Math.pow(y,2) - Math.pow(r,2);
@@ -95,18 +95,19 @@ $('#btn-circulo').click(function(){
 			var S = dA + dB;
 			if (S<0) {
 				ctx.fillRect(x+1+275,y+250,1,1);
-				//ctx.fillRect(x-1+275,y+250,1,1);
+				ctx.fillRect(y+275,x+1+250,1,1);
 				//ctx.fillRect(x+1+275,-y+250,1,1);
 				//ctx.fillRect(x-1+275,-y+250,1,1);
+				
 
 			}else {
 				ctx.fillRect(x+1+275,y-1+250,1,1);
-				//ctx.fillRect(-x-1+275,y-1+250,1,1);
+				ctx.fillRect(y-1+275,x+1+250,1,1);
 				//ctx.fillRect(x+1+275,1-y+250,1,1);
 				//ctx.fillRect(-x-1+275,1-y+250,1,1);
-
+				y=y-1;
 			}
-			y=y-1;
+			
 		}
 		alertify.error('Metodo Bresenham');
 	}
