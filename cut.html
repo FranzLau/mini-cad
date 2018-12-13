@@ -26,10 +26,10 @@
 					<a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
 					</li>
 					<li class="nav-item active">
-					<a class="nav-link" href="#"><i class="fas fa-cut"></i> Recortes</a>
+					<a class="nav-link" href="cut.html"><i class="fas fa-cut"></i> Recortes</a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="#"><i class="fas fa-arrows-alt"></i> Transformaciones</a>
+					<a class="nav-link" href="transforma.html"><i class="fas fa-arrows-alt"></i> Transformaciones</a>
 					</li>
 				</ul>
 			</div>
@@ -41,10 +41,14 @@
 				<div class="col-md-4">
 					<h3>Acciones</h3>
 					<hr>
-
-					<button class="btn btn-primary" onclick="dibujar()">Dibujar</button>
-					<button class="btn btn-success">Recortar</button>
-					<button class="btn btn-danger" onclick="limpiar()">Limpiar</button>
+					<p><i class="fas fa-arrow-alt-circle-right"></i> Click en la pizarra para formar la figura y luego en "Dibujar"</p>
+					<button class="btn btn-primary btn-sm" onclick="dibujar()"><i class="fas fa-paint-brush"></i> Dibujar</button>
+					<hr>
+					<p><i class="fas fa-arrow-alt-circle-right"></i> Click en el boton "Recortar" despues de dibujar la figura</p>
+					<button class="btn btn-success btn-sm" onclick="recortar()"><i class="fas fa-cut"></i> Recortar</button>
+					<hr>
+					<p><i class="fas fa-arrow-alt-circle-right"></i> Para poder empezar con la pizarra limpia click en "Limpiar"</p>
+					<button class="btn btn-danger btn-sm" onclick="limpiar()"><i class="fas fa-broom"></i> Limpiar</button>
 				</div>
 				<div class="col-md-8" style="position: static;">
 					<canvas id="canvas" onclick="q()" style="padding:0; border: 1px solid #ffffff; " width="550" height="500">

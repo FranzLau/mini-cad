@@ -9,7 +9,7 @@ $('#btn-circulo').click(function(){
 	}else if (metodoc == 'IMP') { // ----------------------------Representación IMPLÍCITA --------------------
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
-		ctx.fillStyle = "blue";
+		ctx.fillStyle = "white";
 		var px,py,y;
 		r = parseInt(nrc);
 		xc = parseInt(nxc);
@@ -31,7 +31,7 @@ $('#btn-circulo').click(function(){
 	}else if (metodoc== 'POLAR'){ // ------------------ Representacion Parametrica POLAR ---------------
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
-		ctx.fillStyle = "blue";
+		ctx.fillStyle = "white";
 		var px,py;
 		r = parseInt(nrc);
 		xc = Number(nxc);
@@ -50,7 +50,7 @@ $('#btn-circulo').click(function(){
 	}else if (metodoc=='INC') { // -----------------------------Trazado INCREMENTAL -----------------
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
-		ctx.fillStyle = "blue";
+		ctx.fillStyle = "white";
 
 		r = Number(nrc);
 		xc = Number(nxc);
@@ -83,7 +83,7 @@ $('#btn-circulo').click(function(){
 	}else if (metodoc=='BRES') { // ------------------------ Algortimo de BRESENHAN -------------------
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
-		ctx.fillStyle = "blue";
+		ctx.fillStyle = "white";
 		r = Number(nrc);
 		xc = Number(nxc);
 		yc = Number(nyc);

@@ -96,3 +96,416 @@ function dibujar(){
 function limpiar(){
 	window.location.reload();
 }
+function limpiarGrafico()
+{
+	var c= document.getElementById("canvas");
+	var ctx = c.getContext("2d");
+	ctx.clearRect(0,0,c.width,c.height);
+	cargarLienzo();
+}
+
+var vector_recorte1 = new Array();
+var vector_recorte2 = new Array();
+var vector_recorte3 = new Array();
+var vector_recorte4 = new Array();
+
+function recortar1() // en xmin
+{
+
+	var i = 0;
+
+	limpiarGrafico();
+
+	for (var j=2; j<=vector.length; j=j+2)
+	{
+
+		var num_ax;
+		var num_ay;
+		var num_bx;
+		var num_by;
+
+		if (j==vector.length-1)
+		{
+			num_ax = vector[j-1];
+			num_ay = vector[j];
+			num_bx = vector[1];
+			num_by = vector[2];
+
+			if (num_ax >= xmin && num_bx >= xmin)
+			{
+				vector_recorte1[i+1] = num_bx;
+				vector_recorte1[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ax >= xmin && num_bx < xmin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmin;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte1[i+1] = nuevo_x;
+				vector_recorte1[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ax < xmin && num_bx >=xmin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmin;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte1[i+1] = nuevo_x;
+				vector_recorte1[i+2] = nuevo_y;
+				vector_recorte1[i+3] = num_bx;
+				vector_recorte1[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+
+		else
+		{
+			num_ax = vector[j-1];
+			num_ay = vector[j];
+			num_bx = vector[j+1];
+			num_by = vector[j+2];
+
+			if (num_ax >= xmin && num_bx >= xmin)
+			{
+				vector_recorte1[i+1] = num_bx;
+				vector_recorte1[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ax >= xmin && num_bx < xmin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmin;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte1[i+1] = nuevo_x;
+				vector_recorte1[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ax < xmin && num_bx >=xmin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmin;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte1[i+1] = nuevo_x;
+				vector_recorte1[i+2] = nuevo_y;
+				vector_recorte1[i+3] = num_bx;
+				vector_recorte1[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+	}
+
+}
+
+function recortar2() // en ymax
+{
+
+	var i = 0;
+
+	limpiarGrafico();
+
+	for (var j=2; j<=vector_recorte1.length; j=j+2)
+	{
+
+		var num_ax;
+		var num_ay;
+		var num_bx;
+		var num_by;
+
+		if (j==vector_recorte1.length-1)
+		{
+			num_ax = vector_recorte1[j-1];
+			num_ay = vector_recorte1[j];
+			num_bx = vector_recorte1[1];
+			num_by = vector_recorte1[2];
+
+			if (num_ay <= ymax && num_by <= ymax)
+			{
+				vector_recorte2[i+1] = num_bx;
+				vector_recorte2[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ay <= ymax && num_by > ymax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymax;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte2[i+1] = nuevo_x;
+				vector_recorte2[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ay > ymax && num_by <=ymax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymax;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte2[i+1] = nuevo_x;
+				vector_recorte2[i+2] = nuevo_y;
+				vector_recorte2[i+3] = num_bx;
+				vector_recorte2[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+
+		else
+		{
+			num_ax = vector_recorte1[j-1];
+			num_ay = vector_recorte1[j];
+			num_bx = vector_recorte1[j+1];
+			num_by = vector_recorte1[j+2];
+
+			if (num_ay <= ymax && num_by <= ymax)
+			{
+				vector_recorte2[i+1] = num_bx;
+				vector_recorte2[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ay <= ymax && num_by > ymax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymax;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte2[i+1] = nuevo_x;
+				vector_recorte2[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ay > ymax && num_by <=ymax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymax;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte2[i+1] = nuevo_x;
+				vector_recorte2[i+2] = nuevo_y;
+				vector_recorte2[i+3] = num_bx;
+				vector_recorte2[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+
+	}
+
+}
+
+function recortar3() // en xmax
+{
+
+	var i = 0;
+
+	limpiarGrafico();
+
+	for (var j=2; j<=vector_recorte2.length; j=j+2)
+	{
+
+		var num_ax;
+		var num_ay;
+		var num_bx;
+		var num_by;
+
+		if (j==vector_recorte2.length-1)
+		{
+			num_ax = vector_recorte2[j-1];
+			num_ay = vector_recorte2[j];
+			num_bx = vector_recorte2[1];
+			num_by = vector_recorte2[2];
+
+			if (num_ax <= xmax && num_bx <= xmax)
+			{
+				vector_recorte3[i+1] = num_bx;
+				vector_recorte3[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ax <= xmax && num_bx > xmax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmax;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte3[i+1] = nuevo_x;
+				vector_recorte3[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ax > xmax && num_bx <=xmax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmax;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte3[i+1] = nuevo_x;
+				vector_recorte3[i+2] = nuevo_y;
+				vector_recorte3[i+3] = num_bx;
+				vector_recorte3[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+
+		else
+		{
+			num_ax = vector_recorte2[j-1];
+			num_ay = vector_recorte2[j];
+			num_bx = vector_recorte2[j+1];
+			num_by = vector_recorte2[j+2];
+
+			if (num_ax <= xmax && num_bx <= xmax)
+			{
+				vector_recorte3[i+1] = num_bx;
+				vector_recorte3[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ax <= xmax && num_bx > xmax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmax;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte3[i+1] = nuevo_x;
+				vector_recorte3[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ax > xmax && num_bx <=xmax)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_x = xmax;
+				var nuevo_y = m * (nuevo_x - num_ax) + num_ay;
+				vector_recorte3[i+1] = nuevo_x;
+				vector_recorte3[i+2] = nuevo_y;
+				vector_recorte3[i+3] = num_bx;
+				vector_recorte3[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+	}
+
+}
+
+function recortar4() // en ymin
+{
+
+	var i = 0;
+
+	limpiarGrafico();
+
+	for (var j=2; j<=vector_recorte3.length; j=j+2)
+	{
+
+		var num_ax;
+		var num_ay;
+		var num_bx;
+		var num_by;
+
+		if (j==vector_recorte3.length-1)
+		{
+			num_ax = vector_recorte3[j-1];
+			num_ay = vector_recorte3[j];
+			num_bx = vector_recorte3[1];
+			num_by = vector_recorte3[2];
+
+			if (num_ay >= ymin && num_by >= ymin)
+			{
+				vector_recorte4[i+1] = num_bx;
+				vector_recorte4[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ay >= ymin && num_by < ymin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymin;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte4[i+1] = nuevo_x;
+				vector_recorte4[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ay < ymin && num_by >= ymin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymin;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte4[i+1] = nuevo_x;
+				vector_recorte4[i+2] = nuevo_y;
+				vector_recorte4[i+3] = num_bx;
+				vector_recorte4[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+
+		else
+		{
+			num_ax = vector_recorte3[j-1];
+			num_ay = vector_recorte3[j];
+			num_bx = vector_recorte3[j+1];
+			num_by = vector_recorte3[j+2];
+
+			if (num_ay >= ymin && num_by >= ymin)
+			{
+				vector_recorte4[i+1] = num_bx;
+				vector_recorte4[i+2] = num_by;
+				i = i + 2;
+			}
+
+			else if (num_ay >= ymin && num_by < ymin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymin;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte4[i+1] = nuevo_x;
+				vector_recorte4[i+2] = nuevo_y;
+				i = i + 2;
+			}
+
+			else if (num_ay < ymin && num_by >= ymin)
+			{
+				var m = (num_by-num_ay) / (num_bx-num_ax);
+				var nuevo_y = ymin;
+				var nuevo_x = (1/m) * (nuevo_y - num_ay) + num_ax;
+				vector_recorte4[i+1] = nuevo_x;
+				vector_recorte4[i+2] = nuevo_y;
+				vector_recorte4[i+3] = num_bx;
+				vector_recorte4[i+4] = num_by;
+				i = i + 4;
+			}
+		}
+
+	}
+
+	var c = document.getElementById("canvas");
+	ctx = c.getContext("2d");
+
+	ctx.beginPath();
+	ctx.lineWidth = 3;
+	ctx.strokeStyle = "blue";
+	ctx.fillStyle = "#D0D0D0";
+	for (var j=2; j<=vector_recorte4.length; j=j+2)
+	{
+		if (j==2)
+		{
+			ctx.moveTo(vector_recorte4[j-1],vector_recorte4[j]);
+		}
+		else
+		{
+			ctx.lineTo(vector_recorte4[j-1],vector_recorte4[j]);
+		}
+	}
+	ctx.closePath();
+	ctx.stroke();
+	ctx.fill();
+
+	cargarLienzo();
+}
+
+function recortar()
+{
+	recortar1();
+	recortar2();
+	recortar3();
+	recortar4();
+}

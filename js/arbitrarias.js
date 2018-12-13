@@ -27,7 +27,7 @@ $('#btn-arbitraria').click(function(){
                     y = Math.round(y);
         
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "red";
+                    ctx.fillStyle = "white";
                     var px=x1+i+275;
                     var py=y+250;
                     ctx.fillRect(px,py,1,1);  
@@ -46,7 +46,7 @@ $('#btn-arbitraria').click(function(){
                     y = Math.round(y);
         
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "red";
+                    ctx.fillStyle = "white";
                     var px=x1c+i+275;
                     var py=y+250;
                     ctx.fillRect(px,py,1,1);  
@@ -82,7 +82,7 @@ $('#btn-arbitraria').click(function(){
                         y1 = y;
                         y = Math.round(y);
                         var ctx = canvas.getContext("2d");
-                        ctx.fillStyle = "red";
+                        ctx.fillStyle = "white";
                         var px = x1+i+275;
                         var py = y+250;
                         ctx.fillRect(px,py,1,1);
@@ -100,7 +100,7 @@ $('#btn-arbitraria').click(function(){
                         y1 = y;
                         y = Math.round(y);
                         var ctx = canvas.getContext("2d");
-                        ctx.fillStyle = "red";
+                        ctx.fillStyle = "white";
                         var px = x1c+i+275;
                         var py = y+250;
                         ctx.fillRect(px,py,1,1);
@@ -117,7 +117,7 @@ $('#btn-arbitraria').click(function(){
                         x = Math.round(x);
                         
                         var ctx = canvas.getContext("2d");
-                        ctx.fillStyle = "red";
+                        ctx.fillStyle = "white";
                         var px = x+275;
                         var py = y1+i+250;
                         ctx.fillRect(px,py,1,1);
@@ -135,7 +135,7 @@ $('#btn-arbitraria').click(function(){
                         x1 = x;
                         x = Math.round(x);
                         var ctx = canvas.getContext("2d");
-                        ctx.fillStyle = "red";
+                        ctx.fillStyle = "white";
                         var px = x+275;
                         var py = y1c+i+250;
                         ctx.fillRect(px,py,1,1);
@@ -172,13 +172,13 @@ $('#btn-arbitraria').click(function(){
                 var y2c=y1;
                 // Dibujo el primer punto
                 var ctx = canvas.getContext("2d");
-                ctx.fillStyle = "blue";
+                ctx.fillStyle = "white";
                 ctx.fillRect(x1c,y1c,1,1);
                 add_entero(x1c,y1c,x2c,y2c);
             }else {
                 //Dibujar el primer Punto
                 var ctx = canvas.getContext("2d");
-                ctx.fillStyle = "blue";
+                ctx.fillStyle = "white";
                 ctx.fillRect(x1,y1,1,1);
                 add_entero(x1,y1,x2,y2);
 
@@ -215,7 +215,7 @@ function add_entero(px1,py1,px2,py2){
             		var y = y1;
             		error = error + delt_y;
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -224,7 +224,7 @@ function add_entero(px1,py1,px2,py2){
             		var x = x1 + 1;
             		error = error + (delt_y - delt_x);
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -236,7 +236,7 @@ function add_entero(px1,py1,px2,py2){
             		var x = x1+1;
             		error = error + (delt_y - delt_x);
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -245,7 +245,7 @@ function add_entero(px1,py1,px2,py2){
             		var x = x1;
             		error = error - delt_x;
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -260,7 +260,7 @@ function add_entero(px1,py1,px2,py2){
             		var y = y1;
             		error = error + delt_y;
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -269,7 +269,7 @@ function add_entero(px1,py1,px2,py2){
             		var x = x1 - 1;
             		error = error + (delt_x + delt_y);
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -281,7 +281,7 @@ function add_entero(px1,py1,px2,py2){
             		var y = y1+1;
             		error = error + (delt_x + delt_y);
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
@@ -290,7 +290,7 @@ function add_entero(px1,py1,px2,py2){
             		var x = x1;
             		error = error + delt_x ;
                     var ctx = canvas.getContext("2d");
-                    ctx.fillStyle = "blue";
+                    ctx.fillStyle = "white";
                     x1 = x;
                     y1 = y;
                     ctx.fillRect(x+275,y+250,1,1);
